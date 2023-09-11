@@ -2,18 +2,30 @@ package com.example.BooksShop.service;
 
 import com.example.BooksShop.dao.UserDao;
 import com.example.BooksShop.domain.User;
+import com.example.BooksShop.errors.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl {
 
     @Autowired
-    private UserDao userDao;
+    private static UserDao userDao;
 
-    public User addNewUser(User user) {
-        return UserDao
+    public static User saveUser(User user) {
+        return userDao.save(new User());
     }
+
+    public static User findUserById(Long userId) {
+        return userDao.findById(userId).orElseThrow(
+                () -> new ResourceNotFoundException("Program with id " + userId + " not found"));
+    }
+
+
+
+
+
 
 }
