@@ -6,7 +6,6 @@ import com.example.BooksShop.errors.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl {
@@ -20,12 +19,8 @@ public class UserServiceImpl {
 
     public static User findUserById(Long userId) {
         return userDao.findById(userId).orElseThrow(
-                () -> new ResourceNotFoundException("Program with id " + userId + " not found"));
+                () -> new ResourceNotFoundException("User with id " + userId + " not found"));
     }
-
-
-
-
 
 
 }
