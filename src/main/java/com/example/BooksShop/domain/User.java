@@ -1,16 +1,20 @@
 package com.example.BooksShop.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "users")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")
+
 public class User {
 
     private static final String SEQUENCE_NAME = "user_sequence";
@@ -20,11 +24,16 @@ public class User {
     @SequenceGenerator(name = SEQUENCE_NAME, sequenceName = SEQUENCE_NAME, allocationSize = 1)
 
     private Long id;
-    private String username;
+    @Column(name = "name")
+    private String name;
     private String password;
+    private String gender;
+    private int age;
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private Bucket bucket;
 
     private enum Role {
         USER,

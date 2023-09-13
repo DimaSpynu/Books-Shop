@@ -1,27 +1,44 @@
 package com.example.BooksShop.controller;
 
 import com.example.BooksShop.domain.User;
+import com.example.BooksShop.dto.UserDTO;
 import com.example.BooksShop.service.UserServiceImpl;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RequestMapping("/user")
+@RestController
+@AllArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserServiceImpl userService;
-    @PostMapping("/addNewUser")
-    public User addNewUser(@RequestBody User user){
-    return UserServiceImpl.saveUser(user);
+
+    private final UserServiceImpl userService;
+
+    @PostMapping("/addUser")
+    public ResponseEntity<User> create(@RequestBody UserDTO dto) {
+        return new ResponseEntity<>(userService.createUser(dto), HttpStatus.OK);
     }
 
-    @GetMapping("/getUser")
-    public User getUser(@RequestParam Long userId){
-        return UserServiceImpl.findUserById(userId);
+    @GetMapping("/getUserList")
+    public ResponseEntity<List<User>> readAll() {
+        return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateUser")
+    public ResponseEntity<User> update(@RequestBody User user) {
+        return new ResponseEntity<>(userService.update(user), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteUser")
+    public HttpStatus delete(@PathVariable Long id) {
+        userService.delete(id);
+        return HttpStatus.OK;
     }
 
 }
