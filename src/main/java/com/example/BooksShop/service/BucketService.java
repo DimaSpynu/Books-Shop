@@ -1,14 +1,11 @@
 package com.example.BooksShop.service;
 
-import com.example.BooksShop.dao.BucketDao;
-import com.example.BooksShop.domain.Bucket;
-import com.example.BooksShop.domain.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-
+@Data
 @Service
+@AllArgsConstructor
 public class BucketService {
 
 

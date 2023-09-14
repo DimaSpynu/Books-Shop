@@ -21,13 +21,12 @@ public class Bucket {
     @SequenceGenerator(name = SEQUENCE_NAME, sequenceName = SEQUENCE_NAME, allocationSize = 1)
 
     private long id;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @ManyToMany
     @JoinTable(name = "bucket_products",
             joinColumns = @JoinColumn(name = "bucket_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private List<Product> products;
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
+    private List<Product>products;
 }

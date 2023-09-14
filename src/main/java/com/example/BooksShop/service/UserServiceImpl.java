@@ -22,17 +22,22 @@ public class UserServiceImpl {
 
     @Autowired
     private final User user;
+    @Autowired
     private final ChildUser childUser;
+    @Autowired
     private final UserRepository userRepository;
 
     public User createUser(UserDTO dto) {
-//        if (user.getName() == null || user.getName().isEmpty()) {
-//            throw new IllegalArgumentException("Error: Username is a required field!");
-//        } else if (!isValidEmailAddress(user.getEmail())) {
-//            throw new IllegalArgumentException("Error: Invalid email address!");
-//        } else if (user.getAge() < 18) {
-//            return childUser;
-//        } else
+        if (user.getName() == null || user.getName().isEmpty()) {
+            throw new IllegalArgumentException("Error: Username is a required field!");
+        } else if (!isValidEmailAddress(user.getEmail())) {
+            throw new IllegalArgumentException("Error: Invalid email address!");
+        } else if (user.getAge() < 18) {
+            ChildUser newChildUser = new ChildUser();
+            newChildUser.setName(user.getName());
+            newChildUser.setAge(user.getAge());
+            return childUser;
+        } else
             return userRepository.save(User.builder()
                     .name(dto.getName())
                     .age(dto.getAge())

@@ -23,25 +23,36 @@ public class ProductController {
 
     @PostMapping("/addProduct")
     public ResponseEntity<Product> create(@RequestBody ProductDTO dto) {
-        return new ResponseEntity<>(productService.createProduct(dto), HttpStatus.OK);
+        return mappingResponseProduct(productService.createProduct(dto));
     }
 
     @GetMapping("/getProductList")
     public ResponseEntity<List<Product>> readAll() {
-        return new ResponseEntity<>(productService.readAll(), HttpStatus.OK);
+        return mappingResponseListProduct(productService.readAll());
+    }
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<List<Product>> readByCategoryId(@PathVariable Long id) {
+        return mappingResponseListProduct(productService.readByCategoryId(id));
     }
 
     @PutMapping("/updateProduct")
     public ResponseEntity<Product> update(@RequestBody Product Product) {
-        return new ResponseEntity<>(productService.update(Product), HttpStatus.OK);
+        return mappingResponseProduct(productService.update(Product));
     }
 
-    @DeleteMapping("/deleteProduct")
+    @DeleteMapping("/{id}")
     public HttpStatus delete(@PathVariable Long id) {
         productService.delete(id);
         return HttpStatus.OK;
     }
 
+    private ResponseEntity<Product> mappingResponseProduct(Product product) {
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
+    private ResponseEntity<List<Product>> mappingResponseListProduct(List<Product> products) {
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
 
 
 
