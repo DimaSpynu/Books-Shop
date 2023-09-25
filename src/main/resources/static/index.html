@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Book-Shop</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body>
+<nav class="navbar"></nav>
+<header class="hero-section">
+    <div class="content">
+        <img src="img/Log.png" class="logo" alt="">
+        <p class="sub-heading">Books is not Box</p>
+    </div>
+    </div>
+</header>
+<section class="product">
+    <h2 class="product-category">Popular</h2>
+    <button class="pre-btn"><img src="img/arrow-right.png" alt=""></button>
+    <button class="nxt-btn"><img src="img/arrow-right.png" alt=""></button>
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/SpringBoot.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist </button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/pattern.png" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/OOP.jpg" class="product-thumb" alt="">
+                <button class="card-btn" onclick="addToBucket()">Add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/laurencu-spilke.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Robert-Lafore.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Katy-Beits.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Vasiliev.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Spring Boot по-быстрому</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Djust.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Разработка обслуживаемых программ на языке Java</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Monte.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Граф Монте Кристо</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Satan.jpeg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Biblia Satana</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Greece.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Греческие и римские мифы</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/OnePunchMan.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">One Punch Man</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Peace-War.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Война и мир</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Mainkumpf.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Моя борьба</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Karl.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">О войне</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/JoJo.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Невероятные приключения Джо-Джо</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Fry.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Таинственные мячики небес</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Drakila.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Дракула</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Acteck.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Ацтеки, Майя, Инки</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="img/Gun.jpg" class="product-thumb" alt="">
+                <button class="card-btn"> Add to whishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Торговец пушками</h2>
+                <p class="product-short-des">a short line about this book</p>
+                <span class="price">20$</span><span class="actual-price">40$</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="genres-container">
+    <a href="#" class="genres">
+        <img src="img/category/adventure.jpg" alt="">
+        <p class="genre-title">Adventure <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/IT.jpg" alt="">
+        <p class="genre-title">Development <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/culinar.jpg" alt="">
+        <p class="genre-title">Culinary <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/Drama.jpg" alt="">
+        <p class="genre-title">Drama <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/History.jpg" alt="">
+        <p class="genre-title">History <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/Miths.jpg" alt="">
+        <p class="genre-title">Myths <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/space.jpg" alt="">
+        <p class="genre-title">Space <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/Religion.jpg" alt="">
+        <p class="genre-title">Religion <br> books</p>
+    </a>
+    <a href="#" class="genres">
+        <img src="img/category/Children.jpg" alt="">
+        <p class="genre-title">Children books <br> books</p>
+    </a>
+</section>
+
+
+<script src="js/product.js"></script>
+<script src="js/post.js"></script>
+<script src="js/bucket.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/home.js"></script>
+<script src="js/user.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
+</html>

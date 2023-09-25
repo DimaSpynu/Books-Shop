@@ -35,6 +35,10 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Bucket bucket;
 
+    public boolean isChild(){
+        return age < 18;
+    }
+
     private enum Role {
         USER,
         ADMIN,

@@ -29,4 +29,20 @@ public class Bucket {
             joinColumns = @JoinColumn(name = "bucket_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product>products;
+
+    public void setProduct(Product productById) {
+
+    }
+
+    public void setPrice(Double price) {
+
+    }
+
+    public void setTitle(String title) {
+
+    }
+
+    public void setCategory(Category readById) {
+
+    }
 }

@@ -20,29 +20,32 @@ import java.util.regex.Pattern;
 
 public class UserServiceImpl {
 
-    @Autowired
-    private final User user;
-    @Autowired
-    private final ChildUser childUser;
+
     @Autowired
     private final UserRepository userRepository;
 
     public User createUser(UserDTO dto) {
-        if (user.getName() == null || user.getName().isEmpty()) {
+        //Валидация входящего запроса.
+        validation(dto);
+        //Сохранить пользователя в базе данных
+        //Вернуть созданного пользователя как результат выполнения метода
+
+        return userRepository.save(User.builder()
+                .name(dto.getName())
+                .age(dto.getAge())
+                .email(dto.getEmail())
+                .build());
+    }
+
+    private void validation(UserDTO dto) {
+        if (dto.getName() == null || dto.getName().isEmpty()) {
             throw new IllegalArgumentException("Error: Username is a required field!");
-        } else if (!isValidEmailAddress(user.getEmail())) {
-            throw new IllegalArgumentException("Error: Invalid email address!");
-        } else if (user.getAge() < 18) {
-            ChildUser newChildUser = new ChildUser();
-            newChildUser.setName(user.getName());
-            newChildUser.setAge(user.getAge());
-            return childUser;
-        } else
-            return userRepository.save(User.builder()
-                    .name(dto.getName())
-                    .age(dto.getAge())
-                    .build());
         }
+        if (!isValidEmailAddress(dto.getEmail())) {
+            throw new IllegalArgumentException("Error: Invalid email address!");
+        }
+    }
+
     private boolean isValidEmailAddress(String email) {
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         Pattern pattern = Pattern.compile(emailRegex);
@@ -61,4 +64,11 @@ public class UserServiceImpl {
     public void delete(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User createdUser(User user) {
+        User createdUser = new User();
+        return user;
+    }
+
+
 }

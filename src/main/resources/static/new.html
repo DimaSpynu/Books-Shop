@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/olya.css">
+
+
+</head>
+<body>
+<h1>Список товаров</h1>
+<div id="product-list"></div>
+<script>
+    function addToCart(productId) {
+        $.ajax({
+            type: "POST",
+            url: "/api/bucket/addProductToBucket",
+            data: {
+                productId: productId
+            },
+            success: function(response) {
+                console.log("Товар успешно добавлен в корзину");
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "/api/product/getProductList",
+            success: function(response) {
+                var productList = response;
+                var productHTML = '';
+                for (var i = 0; i < productList.length; i++) {
+                    var product = productList[i];
+                    productHTML += '<div class="product">';
+                    productHTML += '<h3>' + product.name + '</h3>';
+                    productHTML += '<p>Цена: ' + product.price + ' руб.</p>';
+                    productHTML += '<button class="add-to-cart" onclick="addToCart(' + product.id + ')">Добавить в корзину</button>';
+                    productHTML += '</div>';
+                }
+                $('#product-list').html(productHTML);
+            }
+        });
+    });
+</script>
+<div style="display: inline-block; width: 100%" data-ignore="used only for top most containter width">
+    <div class="product-details-container">
+        <p class="problem-title">Product title</p>
+        <div class="product-info">
+            <div class="problem-container">
+                <p class="problem-title">Problem</p>
+                <p class="opportunity-description">Insert the opportunity you’re trying to solve with this product
+                    here</p>
+            </div>
+            <div class="problem-container">
+                <p class="problem-title">Approach</p>
+                <p class="opportunity-description">Insert what your approach is here</p>
+            </div>
+            <div class="product-purpose1">
+                <p class="problem-title">Purpose</p>
+                <p class="product-purpose">Insert the product’s purpose here</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

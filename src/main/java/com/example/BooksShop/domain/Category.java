@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "categories")
 
-public class Categories {
+public class Category {
 
     private static final String SEQUENCE_NAME = "categories_sequence";
 
@@ -24,8 +24,6 @@ public class Categories {
 
     private Long id;
     private String title;
-
-
 }
 
 

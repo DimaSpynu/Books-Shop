@@ -1,14 +1,9 @@
 package com.example.BooksShop.service;
 
-import com.example.BooksShop.dao.CategoryRepository;
 import com.example.BooksShop.dao.ProductRepository;
-import com.example.BooksShop.domain.Categories;
 import com.example.BooksShop.domain.Product;
 import com.example.BooksShop.dto.ProductDTO;
-
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,12 +18,11 @@ public class ProductService {
     private final CategoryService categoryService;
 
 
-
     public Product createProduct(ProductDTO dto) {
         return productRepository.save(Product.builder()
-                .price(dto.getPrice())
                 .title(dto.getTitle())
-                .categories(categoryService.readById(dto.getCategoryId()))
+                .price(dto.getPrice())
+                .category(categoryService.readById(dto.getCategoryId()))
                 .build());
     }
 
@@ -48,5 +42,15 @@ public class ProductService {
 
     public void delete(Long id) {
         productRepository.deleteById(id);
+    }
+
+    public Product readById(Long id) {
+        return productRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("Product not found - " + id));
+    }
+
+    public Product getProductById(int productId) {
+        return productRepository.findById((long) productId).orElseThrow(() ->
+                new RuntimeException("Product not found - " + productId));
     }
 }

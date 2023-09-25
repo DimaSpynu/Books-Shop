@@ -1,0 +1,66 @@
+@import "nav.css";
+.hero-section {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hero-section logo {
+    height: 50px;
+    display: block;
+    margin: auto;
+
+
+}
+.hero-section .sub-heading {
+    margin-top: 10px;
+    text-align: center;
+    color: #ff0000;
+    text-transform: capitalize;
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 60px;
+}
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+.product-category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+.product-container {
+    display: flex;
+    justify-content: space-between;
+}
+.product-card {
+    flex-basis: 24%;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+    transition: 0.5s;
+
+}
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 30px 0;
+}
+
+
+
+

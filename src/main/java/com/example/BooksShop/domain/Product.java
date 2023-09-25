@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
@@ -27,10 +26,10 @@ public class Product {
     private Double price;
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Categories categories;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "products_categories",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "categories_id"))
-    private List<Categories> categories;
+    private Category category;
+
+
+
+
 }
+
