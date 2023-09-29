@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>contacts</title>
+    <link rel="stylesheet" href="../css/contacts.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<nav class="navbar"></nav>
+<div class="contacts"> Contacts Page </div>
+<div class="contacts-info" id="contacts-info">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+            <td>PHONE</td>
+        </tr>
+        <tr th:each="contact : ${contacts}">
+            <td th:text="${contact.id}"></td>
+            <td th:text="${contact.name}"></td>
+            <td th:text="${contact.email}"></td>
+            <td th:text="${contact.phone}"></td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+
+
+
+
+<script src="../js/nav.js"></script>
+</body>
+</html>
+
+
+
+

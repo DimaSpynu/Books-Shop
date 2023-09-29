@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contacts{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #021F1DCC;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contacts-info{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #021F1DCC;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #021F1DCC;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}

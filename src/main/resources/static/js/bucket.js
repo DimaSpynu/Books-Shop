@@ -1,5 +1,4 @@
-// Массив для хранения товаров в корзине
-let cartItems = [];
+let cartItems = [];// Массив для хранения товаров в корзине
 
 // Функция для отображения товаров в корзине
 function renderCartItems() {
@@ -28,6 +27,7 @@ function renderCartItems() {
         cartItem.appendChild(itemName);
         cartItem.appendChild(itemPrice);
         cartItem.appendChild(removeBtn);
+
 
         cartItemsContainer.appendChild(cartItem);
     });

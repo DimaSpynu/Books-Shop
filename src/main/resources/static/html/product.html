@@ -1,29 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Книжный магазин</title>
-    <link rel="stylesheet" href="/static/css/products.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 
 <body>
+<nav class="navbar"></nav>
+
 <header class="hero-section">
-<div class="container">
-    <h1>Каталог товаров</h1>
-    <div id="products"></div>
+
     <section class="product">
         <h2 class="product-category">Popular</h2>
-        <button class="pre-btn"><img src="img/arrow-right.png" alt=""></button>
-        <button class="nxt-btn"><img src="img/arrow-right.png" alt=""></button>
+        <button class="pre-btn"><img src="../img/arrow-right.png" alt=""></button>
+        <button class="nxt-btn"><img src="../img/arrow-right.png" alt=""></button>
         <div class="product-container">
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/SpringBoot.jpg" class="product-thumb" alt="">
+                    <img src="../img/SpringBoot.jpg" class="product-thumb" alt="">
+                    <button class="card-btn" data-product-id="1"> Add to whishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Spring Boot по-быстрому</h2>
+                    <p class="product-short-des">a short line about this book</p>
+                    <span class="price">20$</span><span class="actual-price">40$</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="../img/pattern.png" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -35,7 +47,19 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/pattern.png" class="product-thumb" alt="">
+                    <img src="../img/OOP.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">Add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Spring Boot по-быстрому</h2>
+                    <p class="product-short-des">a short line about this book</p>
+                    <span class="price">20$</span><span class="actual-price">40$</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="../img/laurencu-spilke.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -47,19 +71,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/OOP.jpg" class="product-thumb" alt="">
-                    <button class="card-btn" onclick="addToBucket()">Add to wishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Spring Boot по-быстрому</h2>
-                    <p class="product-short-des">a short line about this book</p>
-                    <span class="price">20$</span><span class="actual-price">40$</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">50% off</span>
-                    <img src="img/laurencu-spilke.jpg" class="product-thumb" alt="">
+                    <img src="../img/Robert-Lafore.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -71,7 +83,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Robert-Lafore.jpg" class="product-thumb" alt="">
+                    <img src="../img/Katy-Beits.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -83,7 +95,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Katy-Beits.jpg" class="product-thumb" alt="">
+                    <img src="../img/Vasiliev.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -95,19 +107,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Vasiliev.jpg" class="product-thumb" alt="">
-                    <button class="card-btn"> Add to whishlist</button>
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Spring Boot по-быстрому</h2>
-                    <p class="product-short-des">a short line about this book</p>
-                    <span class="price">20$</span><span class="actual-price">40$</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="discount-tag">50% off</span>
-                    <img src="img/Djust.jpg" class="product-thumb" alt="">
+                    <img src="../img/Djust.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -119,7 +119,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Monte.jpg" class="product-thumb" alt="">
+                    <img src="../img/Monte.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -131,7 +131,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Satan.jpeg" class="product-thumb" alt="">
+                    <img src="../img/Satan.jpeg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -143,7 +143,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Greece.jpg" class="product-thumb" alt="">
+                    <img src="../img/Greece.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -155,7 +155,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/OnePunchMan.jpg" class="product-thumb" alt="">
+                    <img src="../img/OnePunchMan.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -167,7 +167,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Peace-War.jpg" class="product-thumb" alt="">
+                    <img src="../img/Peace-War.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -179,7 +179,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Mainkumpf.jpg" class="product-thumb" alt="">
+                    <img src="../img/Mainkumpf.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -191,7 +191,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Karl.jpg" class="product-thumb" alt="">
+                    <img src="../img/Karl.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -203,7 +203,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/JoJo.jpg" class="product-thumb" alt="">
+                    <img src="../img/JoJo.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -215,7 +215,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Fry.jpg" class="product-thumb" alt="">
+                    <img src="../img/Fry.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -227,7 +227,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Drakila.jpg" class="product-thumb" alt="">
+                    <img src="../img/Drakila.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -239,7 +239,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Acteck.jpg" class="product-thumb" alt="">
+                    <img src="../img/Acteck.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -251,7 +251,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
-                    <img src="img/Gun.jpg" class="product-thumb" alt="">
+                    <img src="../img/Gun.jpg" class="product-thumb" alt="">
                     <button class="card-btn"> Add to whishlist</button>
                 </div>
                 <div class="product-info">
@@ -262,22 +262,17 @@
             </div>
         </div>
     </section>
-</div>
 
-<div class="cart-container">
-    <h2>Корзина товаров</h2>
-    <div id="cart-items"></div>
-    <p>Общая сумма: <span id="total-amount">0.00</span></p>
-</div>
+
 </header>
 
-<script src="/static/js/product.js"></script>
-<script src="js/product.js"></script>
-<script src="js/bucket.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/home.js"></script>
-<script src="js/user.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="../js/product.js"></script>
+<script src="../js/bucket.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/home.js"></script>
+<script src="../js/user.js"></script>
+<script src="../lib/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>
